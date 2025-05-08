@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tms_frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - tms_net
+
+networks:
+  tms_net:
+    external: true
